@@ -9,12 +9,17 @@ const typeDefs = `
   }
   
   type Query {
-    messages: [Messages!]
+    messages: [Message!]
   }
 `;
 
-const server = new GraphQLServer({typeDefs});
+// How do I get the data (through resolvers). Need to match the keys in the type definition
+const resolvers = {
+  Query: {
+    messages: () => messages,
+  }
+}
+const server = new GraphQLServer({ typeDefs, resolvers });
 server.start(({port}) => {
-  console.log(`Server on http://localhost:{$port}`)
+  console.log(`Server on http://localhost:${port}`)
 })
-

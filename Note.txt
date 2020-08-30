@@ -10,5 +10,6 @@ https://github.com/prisma-labs/graphql-yoga
 C:\react\chat-o-matic\server>npm init -y
 C:\react\chat-o-matic\server>npm install graphql-yoga
 
+C:\react\chat-o-matic\server>npm run start          << Server on http://localhost:4000
 
 
