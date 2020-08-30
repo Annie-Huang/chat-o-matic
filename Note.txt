@@ -19,3 +19,4 @@ npx: installed 1 in 2.43s
 > cloned jherr/wp5-starter-react#main to client
 
 
+C:\react\chat-o-matic\client>npm install
