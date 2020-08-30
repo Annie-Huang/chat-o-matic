@@ -5,11 +5,17 @@ https://github.com/jherr/chat-o-matic
 https://github.com/Annie-Huang/chat-o-matic
 
 https://github.com/prisma-labs/graphql-yoga
+https://github.com/jherr/wp5-starter-react
+
 ========================================================
 
 C:\react\chat-o-matic\server>npm init -y
 C:\react\chat-o-matic\server>npm install graphql-yoga
 
 C:\react\chat-o-matic\server>npm run start          << Server on http://localhost:4000
+
+C:\react\chat-o-matic>npx degit https://github.com/jherr/wp5-starter-react.git/#main client             <<< Mac use '\#main'
+npx: installed 1 in 2.43s
+> cloned jherr/wp5-starter-react#main to client
 
 
