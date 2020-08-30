@@ -1,0 +1,8 @@
+Realtime Chat App | React, GraphQL & Websockets
+(https://www.youtube.com/watch?v=E3NHd-PkLrQ)
+
+https://github.com/jherr/chat-o-matic
+https://github.com/Annie-Huang/chat-o-matic
+
+https://github.com/prisma-labs/graphql-yoga
+========================================================
