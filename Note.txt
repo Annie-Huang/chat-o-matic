@@ -12,6 +12,7 @@ https://designrevision.com/docs/shards-react/getting-started
 https://www.apollographql.com/docs/react/get-started/
 https://www.apollographql.com/docs/react/data/mutations/
 https://www.apollographql.com/docs/react/data/queries/  << polling
+https://www.apollographql.com/docs/react/data/subscriptions/
 ========================================================
 
 C:\react\chat-o-matic\server>npm init -y
@@ -28,4 +29,4 @@ C:\react\chat-o-matic\client>npm install
 C:\react\chat-o-matic\client>npm run start          << Server starts at http://localhost:8080/
 C:\react\chat-o-matic\client>npm install shards-react
 C:\react\chat-o-matic\client>npm install @apollo/client graphql
-
+C:\react\chat-o-matic\client>npm install subscriptions-transport-ws
