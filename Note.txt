@@ -30,3 +30,49 @@ C:\react\chat-o-matic\client>npm run start          << Server starts at http://l
 C:\react\chat-o-matic\client>npm install shards-react
 C:\react\chat-o-matic\client>npm install @apollo/client graphql
 C:\react\chat-o-matic\client>npm install subscriptions-transport-ws
+
+
+How to start the app:
+============================
+Terminal one: C:\react\chat-o-matic\server>npm run start
+Once it's up, open http://localhost:4000 and open three tags:
+1. enter:
+mutation {
+  postMessage(user: "Jack", content: "This is neat!")
+}
+and run. create a few different msg and run.
+
+2. enter:
+query {
+  messages {
+    id
+    content
+    user
+  }
+}
+and run
+
+3. enter:
+subscription {
+    messages {
+    id
+    content
+    user
+  }
+}
+and run. This one will continue to run because it's a subscription
+
+
+Terminal two: C:\react\chat-o-matic\client>npm run start
+Once it's running go to http://localhost:8080/ and see all the msg.
+Default user is Jack
+Try to type some msg and submit to see if it shows up.
+
+Open another window and go to http://localhost:8080/
+Change the name to another person, e.g. Annie
+You can default see all the JA (Jack's) msg.
+Try to talk to Jack and you will see your sent msg to go Jack's window.
+
+Got to Jack's window and type something. You can see the msg appear in Annie's msg.
+
+You can continue to add a 3rd person in another window. etc.
