@@ -2,7 +2,7 @@ import React from 'react';
 
 // Mirror how to do it in https://www.apollographql.com/docs/react/get-started/ from
 // 'index.js' setup | 'Connect your client to React' setup | 'Request data' example
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql  } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, useMutation, gql } from '@apollo/client';
 
 import {Container, Row, Col, FormInput, Button} from 'shards-react';
 
@@ -18,6 +18,12 @@ query {
     content
     user
   }
+}
+`;
+
+const POST_MESSAGES = gql`
+mutation ($user: String!, $content: String!) {
+  postMessage(user: $user, content: $content)
 }
 `;
 
@@ -77,6 +83,20 @@ const Chat = () => {
     user: 'Jack',
     content: '',
   })
+  const [postMessage] = useMutation(POST_MESSAGES);
+
+  const onSend = () => {
+    if (state.content.length > 0) {
+      // https://www.apollographql.com/docs/react/data/mutations/
+      postMessage({
+        variables: state
+      })
+    }
+    setState({
+      ...state,
+      content: '',
+    })
+  }
 
   return (
     <Container>
