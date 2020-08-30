@@ -51,6 +51,8 @@ const resolvers = {
         const channel = Math.random().toString(36).slice(2,15);
         onMessagesUpdates(() => pubsub.public(channel, {messages}))
 
+        // Automatically send it the first time when you start publishing
+        setTimeout(() => pubsub.public(channel, {messages}), 0);
 
         return pubsub.asyncIterator(channel);
       },
