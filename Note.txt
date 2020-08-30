@@ -5,6 +5,7 @@ https://github.com/jherr/chat-o-matic
 https://github.com/Annie-Huang/chat-o-matic
 
 https://github.com/prisma-labs/graphql-yoga
+https://github.com/apollographql/graphql-subscriptions
 https://github.com/jherr/wp5-starter-react
 
 https://designrevision.com/docs/shards-react/getting-started

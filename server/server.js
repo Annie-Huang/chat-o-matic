@@ -1,4 +1,4 @@
-const {GraphQLServer} = require('graphql-yoga');
+const {GraphQLServer, PubSub} = require('graphql-yoga');
 
 const messages = [];
 
@@ -18,6 +18,10 @@ const typeDefs = `
   type Mutation {
     postMessage(user: String!, content: String!): ID!
   }
+  
+  type Subscription {
+    messages: [Message!]
+  }
 `;
 
 // How do I get the data (through resolvers). Need to match the keys in the type definition
@@ -35,9 +39,21 @@ const resolvers = {
       });
       return id;
     }
-  }
+  },
+  // https://github.com/apollographql/graphql-subscriptions
+  Subscription: {
+    messages: {
+      subscribe: (parent, args, {pubsub}) => {
+        // pubsub.asyncIterator(SOMETHING_CHANGED_TOPIC)
+        const channel = Math.random().toString(36).slice(2,15);
+        return pubsub.asyncIterator(channel);
+      },
+    },
+  },
 }
-const server = new GraphQLServer({ typeDefs, resolvers });
+
+const pubsub = new PubSub();
+const server = new GraphQLServer({ typeDefs, resolvers, context: {pubsub}});
 server.start(({port}) => {
   console.log(`Server on http://localhost:${port}`)
 })
