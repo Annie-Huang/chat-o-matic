@@ -28,7 +28,10 @@ mutation ($user: String!, $content: String!) {
 `;
 
 const Messages = ({user}) => {
-  const { data } = useQuery(GET_MESSAGES);
+  // https://www.apollographql.com/docs/react/data/queries/   << polling part
+  const { data } = useQuery(GET_MESSAGES, {
+    pollInterval: 500,
+  });
   if (!data) {
     return null;
   }

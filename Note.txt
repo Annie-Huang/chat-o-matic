@@ -10,6 +10,7 @@ https://github.com/jherr/wp5-starter-react
 https://designrevision.com/docs/shards-react/getting-started
 https://www.apollographql.com/docs/react/get-started/
 https://www.apollographql.com/docs/react/data/mutations/
+https://www.apollographql.com/docs/react/data/queries/  << polling
 ========================================================
 
 C:\react\chat-o-matic\server>npm init -y
