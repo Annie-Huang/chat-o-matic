@@ -24,6 +24,9 @@ const typeDefs = `
   }
 `;
 
+const subscribers = [];
+const onMessagesUpdates = (fn) => subscribers.push(fn);
+
 // How do I get the data (through resolvers). Need to match the keys in the type definition
 const resolvers = {
   Query: {
@@ -46,6 +49,9 @@ const resolvers = {
       subscribe: (parent, args, {pubsub}) => {
         // pubsub.asyncIterator(SOMETHING_CHANGED_TOPIC)
         const channel = Math.random().toString(36).slice(2,15);
+        onMessagesUpdates(() => pubsub.public(channel, {messages}))
+
+
         return pubsub.asyncIterator(channel);
       },
     },
