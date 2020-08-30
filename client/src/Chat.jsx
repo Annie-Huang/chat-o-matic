@@ -3,8 +3,16 @@ import React from 'react';
 // Mirror how to do it in https://www.apollographql.com/docs/react/get-started/ from
 // 'index.js' setup | 'Connect your client to React' setup | 'Request data' example
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, useMutation, gql } from '@apollo/client';
-
+import { WebSocketLink } from '@apollo/client/link/ws';
 import {Container, Row, Col, FormInput, Button} from 'shards-react';
+
+// https://www.apollographql.com/docs/react/data/subscriptions/   <<< Initialize a WebSocketLink
+const link = new WebSocketLink({
+  uri: `ws://localhost:5000/`,
+  options: {
+    reconnect: true
+  }
+});
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/',
