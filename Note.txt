@@ -22,6 +22,7 @@ npx: installed 1 in 2.43s
 
 
 C:\react\chat-o-matic\client>npm install
-C:\react\chat-o-matic\client>npm run start
+C:\react\chat-o-matic\client>npm run start          << Server starts at http://localhost:8080/
 C:\react\chat-o-matic\client>npm install shards-react
 C:\react\chat-o-matic\client>npm install @apollo/client graphql
+
