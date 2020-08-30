@@ -2,7 +2,7 @@ import React from 'react';
 
 // Mirror how to do it in https://www.apollographql.com/docs/react/get-started/ from
 // 'index.js' setup | 'Connect your client to React' setup | 'Request data' example
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, useMutation, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, useSubscription, useMutation, gql } from '@apollo/client';
 import { WebSocketLink } from '@apollo/client/link/ws';
 import {Container, Row, Col, FormInput, Button} from 'shards-react';
 
@@ -20,8 +20,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
+// const GET_MESSAGES = gql`
+// query {
+//   messages {
+//     id
+//     content
+//     user
+//   }
+// }
+// `;
 const GET_MESSAGES = gql`
-query {
+subscription {
   messages {
     id
     content
@@ -37,10 +46,12 @@ mutation ($user: String!, $content: String!) {
 `;
 
 const Messages = ({user}) => {
-  // https://www.apollographql.com/docs/react/data/queries/   << polling part
-  const { data } = useQuery(GET_MESSAGES, {
-    pollInterval: 500,
-  });
+  // // https://www.apollographql.com/docs/react/data/queries/   << polling part
+  // const { data } = useQuery(GET_MESSAGES, {
+  //   pollInterval: 500,
+  // });
+  const { data } = useSubscription(GET_MESSAGES);
+
   if (!data) {
     return null;
   }
