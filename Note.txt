@@ -6,8 +6,9 @@ https://github.com/Annie-Huang/chat-o-matic
 
 https://github.com/prisma-labs/graphql-yoga
 https://github.com/jherr/wp5-starter-react
-https://designrevision.com/docs/shards-react/getting-started
 
+https://designrevision.com/docs/shards-react/getting-started
+https://www.apollographql.com/docs/react/get-started/
 ========================================================
 
 C:\react\chat-o-matic\server>npm init -y
@@ -23,3 +24,4 @@ npx: installed 1 in 2.43s
 C:\react\chat-o-matic\client>npm install
 C:\react\chat-o-matic\client>npm run start
 C:\react\chat-o-matic\client>npm install shards-react
+C:\react\chat-o-matic\client>npm install @apollo/client graphql
