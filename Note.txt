@@ -6,3 +6,9 @@ https://github.com/Annie-Huang/chat-o-matic
 
 https://github.com/prisma-labs/graphql-yoga
 ========================================================
+
+C:\react\chat-o-matic\server>npm init -y
+
+
+
+
