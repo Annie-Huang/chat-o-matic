@@ -4,7 +4,7 @@ import React from 'react';
 // 'index.js' setup | 'Connect your client to React' setup | 'Request data' example
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql  } from '@apollo/client';
 
-import {Container} from 'shards-react';
+import {Container, Row, Col, FormInput, Button} from 'shards-react';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/',
@@ -73,10 +73,38 @@ const Messages = ({user}) => {
 
 // <div>I'm a chat window</div>
 const Chat = () => {
+  const [state, setState] = React.useState({
+    user: 'Jack',
+    content: '',
+  })
+
   return (
     <Container>
       {/*<Messages user='Jack' />*/}
-      <Messages user='Mary' />
+      {/*<Messages user='Mary' />*/}
+      <Messages user={state.user} />
+      <Row>
+        <Col xs={2} style={{padding: 0}}>
+          <FormInput
+            label='User'
+            value={state.user}
+            onChange={event => setState({
+              ...state,
+              user: event.target.value,
+            })}
+          />
+        </Col>
+        <Col xs={8} style={{padding: 0}}>
+          <FormInput
+            label='Content'
+            value={state.content}
+            onChange={event => setState({
+              ...state,
+              content: event.target.value,
+            })}
+          />
+        </Col>
+      </Row>
     </Container>
   )
 }
