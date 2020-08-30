@@ -19,10 +19,19 @@ query {
 }
 `;
 
+const Messages = ({user}) => {
+  const { data } = useQuery(GET_MESSAGES);
+  if (!data) {
+    return null;
+  }
+
+  return JSON.stringify(data);
+}
+
 // <div>I'm a chat window</div>
 const Chat = () => {
   return (
-    <div>I'm a chat window</div>
+    <div><Messages user='Jack' /></div>
   )
 }
 
