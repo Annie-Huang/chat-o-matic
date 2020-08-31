@@ -37,6 +37,12 @@ C:\react\chat-o-matic\home-page>npm install
 C:\react\chat-o-matic\home-page>npm install shards-react
 C:\react\chat-o-matic\home-page>npm run start
 
+Restart:
+C:\react\chat-o-matic\client>npm run start
+And go to:
+http://localhost:8080/remoteEntry.js
+
+
 How to start the app:
 ============================
 Terminal one: C:\react\chat-o-matic\server>npm run start
