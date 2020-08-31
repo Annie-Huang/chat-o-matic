@@ -87,3 +87,6 @@ Try to talk to Jack and you will see your sent msg to go Jack's window.
 Got to Jack's window and type something. You can see the msg appear in Annie's msg.
 
 You can continue to add a 3rd person in another window. etc.
+
+
+Terminal three: C:\react\chat-o-matic\home-page>npm run start
