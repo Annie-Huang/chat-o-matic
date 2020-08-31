@@ -32,10 +32,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "starter",
+      name: "chat",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Chat": "./src/Chat",
+      },
       shared: require("./package.json").dependencies,
     }),
     new HtmlWebPackPlugin({
