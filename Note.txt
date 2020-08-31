@@ -32,6 +32,9 @@ C:\react\chat-o-matic\client>npm install @apollo/client graphql
 C:\react\chat-o-matic\client>npm install subscriptions-transport-ws
 
 
+C:\react\chat-o-matic>npx degit https://github.com/jherr/wp5-starter-react.git/#main home-page
+
+
 How to start the app:
 ============================
 Terminal one: C:\react\chat-o-matic\server>npm run start
