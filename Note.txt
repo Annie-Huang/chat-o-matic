@@ -34,6 +34,7 @@ C:\react\chat-o-matic\client>npm install subscriptions-transport-ws
 
 C:\react\chat-o-matic>npx degit https://github.com/jherr/wp5-starter-react.git/#main home-page
 C:\react\chat-o-matic\home-page>npm install
+C:\react\chat-o-matic\home-page>npm install shards-react
 
 How to start the app:
 ============================
