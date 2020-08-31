@@ -90,3 +90,5 @@ You can continue to add a 3rd person in another window. etc.
 
 
 Terminal three: C:\react\chat-o-matic\home-page>npm run start
+Once it's running go to http://localhost:8081/ and see all the msg
+You can try to type in new msg and see it appear in the two windows under http://localhost:8080
